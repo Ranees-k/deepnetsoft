@@ -7,7 +7,7 @@ import menuItemRoutes from "./routes/menuItemRoutes";
 dotenv.config();
 
 const app = express();
-const PORT = 5432;
+const PORT = process.env.PORT;
 
 // Middleware
 app.use(cors({ origin: "*" }));
