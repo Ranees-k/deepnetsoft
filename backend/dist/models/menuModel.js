@@ -15,12 +15,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.getAllMenus = exports.createMenu = void 0;
 const db_1 = __importDefault(require("../config/db"));
 const createMenu = (name, description) => __awaiter(void 0, void 0, void 0, function* () {
-    const result = yield db_1.default.query("INSERT INTO deepnetsoftschema.menu (name, description) VALUES ($1, $2) RETURNING *", [name, description]);
+    const result = yield db_1.default.query("INSERT INTO menu (name, description) VALUES ($1, $2) RETURNING *", [name, description]);
     return result.rows[0];
 });
 exports.createMenu = createMenu;
 const getAllMenus = () => __awaiter(void 0, void 0, void 0, function* () {
-    const result = yield db_1.default.query("SELECT * FROM deepnetsoftschema.menu");
+    const result = yield db_1.default.query("SELECT * FROM menu");
     return result.rows;
 });
 exports.getAllMenus = getAllMenus;

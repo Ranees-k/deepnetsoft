@@ -15,12 +15,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.getMenuItemsByMenuId = exports.createMenuItem = void 0;
 const db_1 = __importDefault(require("../config/db"));
 const createMenuItem = (menu_id, name, description, price) => __awaiter(void 0, void 0, void 0, function* () {
-    const result = yield db_1.default.query("INSERT INTO deepnetsoftschema.menu_item (menu_id, name, description, price) VALUES ($1, $2, $3, $4) RETURNING *", [menu_id, name, description, price]);
+    const result = yield db_1.default.query("INSERT INTO menu_item (menu_id, name, description, price) VALUES ($1, $2, $3, $4) RETURNING *", [menu_id, name, description, price]);
     return result.rows[0];
 });
 exports.createMenuItem = createMenuItem;
 const getMenuItemsByMenuId = (menu_id) => __awaiter(void 0, void 0, void 0, function* () {
-    const result = yield db_1.default.query("SELECT * FROM deepnetsoftschema.menu_item WHERE menu_id = $1", [menu_id]);
+    const result = yield db_1.default.query("SELECT * FROM menu_item WHERE menu_id = $1", [menu_id]);
     return result.rows;
 });
 exports.getMenuItemsByMenuId = getMenuItemsByMenuId;
