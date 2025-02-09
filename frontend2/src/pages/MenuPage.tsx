@@ -35,7 +35,6 @@ const MenuPage: React.FC = () => {
       .catch((error) => console.error("Error fetching menu items:", error));
   }, [selectedCategory]);
 
-  console.log(menuItems,"menu")
   return (
     <Grid2 container>
     <Grid2 className="menu" size={{xs:12}}>
@@ -71,8 +70,9 @@ const MenuPage: React.FC = () => {
   menuItems.map((item, index) => (
     <Grid2 key={index} size={{ xs: 12 }} className="menu-item">
       <Grid2 className="menu-item-content">
-        <Grid2 className="menu-item-header">
-          <span className="menu-item-name">{item?.name}</span>
+        <Grid2 className="menu-item-header" >
+          <Grid2>
+          <span className="menu-item-name">{item?.name}</span></Grid2>
           <span className="menu-item-separator"></span>
           <span className="menu-item-price">${item?.price}</span>
         </Grid2>

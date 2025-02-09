@@ -39,7 +39,7 @@
  
 .category-buttons{
     background: url("../assets/Rectangle\ 107.svg") no-repeat center center/cover;
-    height: 79px;
+    min-height: 99px;
     display: flex;
 
     .menu-button {
@@ -101,7 +101,13 @@
     .menu-title {
       font-size: 36px;
     }
-  
+    .category-buttons{
+      padding-top: 20px;
+      padding-bottom:20px;
+    }
+    .menu-outer-grid{
+      padding: 20px;
+    }
     .category-buttons {
       .menu-button {
         font-size: 14px;
